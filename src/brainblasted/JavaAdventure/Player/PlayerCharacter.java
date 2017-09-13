@@ -1,6 +1,5 @@
 package brainblasted.JavaAdventure.Player;
 
-import brainblasted.JavaAdventure.Properties.ClassLibrary;
 import brainblasted.JavaAdventure.Properties.Health;
 import brainblasted.JavaAdventure.Properties.ClassLibrary.EntityClass;
 
