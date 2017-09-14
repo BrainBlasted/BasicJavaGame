@@ -14,6 +14,6 @@ public class Giant {
     }
 
     public void Attack () {
-
+        
     }
 }

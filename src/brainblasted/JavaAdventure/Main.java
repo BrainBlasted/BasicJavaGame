@@ -10,6 +10,5 @@ public class Main{
     public static void main(String[] args) {
         PlayerCharacter player = new PlayerCharacter();
         Giant giant = new Giant();
-        giant.Attack();
     }
 }
