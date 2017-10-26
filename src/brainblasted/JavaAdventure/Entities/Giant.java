@@ -1,19 +1,23 @@
 package brainblasted.JavaAdventure.Entities;
 
 import brainblasted.JavaAdventure.Properties.Health;
-import brainblasted.JavaAdventure.Properties.ClassLibrary.EntityClass;;
 
 /**
  * Giant
  */
-public class Giant {
+public class Giant extends Health {
 
     public Giant () {
-        double giantHealth  = Health.EntityHealth(EntityClass.GiantClass);
-        System.out.printf("The giant's health is %.1f%n", giantHealth);
+        this.healthFactor = 0.5;
+        this.health = getHealth(healthFactor);
+        onInit();
     }
 
-    public void Attack () {
-        
+    private void onInit() {
+        System.out.println(this.toString() + " has spawned.");
+	}
+
+    public @Override String toString() {
+        return "Giant";
     }
 }

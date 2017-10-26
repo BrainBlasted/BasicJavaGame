@@ -1,20 +1,48 @@
 package brainblasted.JavaAdventure.Entities;
 
-import brainblasted.JavaAdventure.Properties.ClassLibrary;
+import brainblasted.JavaAdventure.Properties.Armor;
 import brainblasted.JavaAdventure.Properties.Health;
-import brainblasted.JavaAdventure.Properties.ClassLibrary.EntityClass;
 
 /**
  * PlayerCharacter
  */
-public class PlayerCharacter {
+public class PlayerCharacter extends Health {
+    private double strength;
+    private double luck;
 
     public PlayerCharacter () {
-        double playerHealth = Health.EntityHealth(EntityClass.PlayerClass);
-        System.out.printf("The player's health is %.1f%n", playerHealth);
+        this.healthFactor = 0.2;
+        this.health = getHealth(healthFactor);
+        onInit();
     }
 
-    public void Attack () {
+    /**
+     * The set of methods to be run on spawn.
+     * 
+     * @category Utils
+     */
+    private void onInit() {
+        System.out.println(this.toString() + " has spawned.");
+        System.out.printf("%s's health is %.1f%n", this.toString(),this.health);
+        PlayerArmor armorTracker = new PlayerArmor();
+        armorTracker.isArmorEquiped(this.toString());
+	}
 
+	private class PlayerArmor extends Armor {
+        public PlayerArmor() {
+        }
+    }
+
+    /**
+     * Returns the name of the PlayerCharacter;
+     * Placeholder until name generation is
+     * implemented.
+     * 
+     * @return
+     *      The name of the PlayerCharacter Object
+     * @category Utils
+     */
+    public @Override String toString() {
+        return "Player";
     }
 }

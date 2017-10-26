@@ -1,25 +1,30 @@
+/**
+ * Armor.java
+ *  The class that handles all the manipulation of armor
+ *  values. 
+ */
 package brainblasted.JavaAdventure.Properties;
 
-import brainblasted.JavaAdventure.Properties.ClassLibrary;
-import brainblasted.JavaAdventure.Properties.ClassLibrary.EntityClass;
-
-/**
- * Armor
- */
 public class Armor {
-    public final double BASE_ARMOR = 0;
+    protected double baseArmor;
+    protected double armorRating;
 
     public Armor () {
-        
+        this.baseArmor = 100;
+        this.armorRating = baseArmor;
     }
 
-    public boolean isArmorEquiped () {
-        if (armorRating == BASE_ARMOR) {
+    public boolean isArmorEquiped (String ent) {
+        if (armorRating == baseArmor){
+            System.out.println(ent + " has no armor equiped.");
             return false; 
         } else {
+            System.out.println(ent + " has armor equiped.");
             return true;
         }
     }
 
-    public double armorRating;
+    public double getArmorRating () {
+        return armorRating;
+    }
 }
